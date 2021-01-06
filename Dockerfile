@@ -2,7 +2,7 @@ FROM nginx:1.19.6-alpine
 
 ARG NGINX_VERSION=1.19.6
 ARG LIBQR_VERSION=4.1.1
-ARG NGX_LIBQR_VERSION=20200106
+ARG NGX_LIBQR_VERSION=20210106
 
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make openssl-dev pcre-dev zlib-dev linux-headers libxslt-dev gd-dev geoip-dev perl-dev libedit-dev mercurial bash alpine-sdk findutils && \
     apk add --no-cache --virtual .build-qrcode openssl-dev pcre-dev zlib-dev build-base autoconf automake libtool libpng-dev libgd pcre pcre-dev pkgconfig gd-dev && \
