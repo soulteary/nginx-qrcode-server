@@ -9,7 +9,7 @@ RUN apk add --no-cache --virtual .build-deps gcc libc-dev make openssl-dev pcre-
     mkdir -p /usr/src && cd /usr/src && \
     curl -L https://github.com/fukuchi/libqrencode/archive/v${LIBQR_VERSION}.tar.gz -o "v${LIBQR_VERSION}.tar.gz" && \
     tar -zxC /usr/src -f v${LIBQR_VERSION}.tar.gz && \
-    cd /usr/src/libqrencode-4.1.1 && ./autogen.sh && LDFLAGS=-lgd ./configure && make && make install && cd /usr/src && \
+    cd /usr/src/libqrencode-${LIBQR_VERSION} && ./autogen.sh && LDFLAGS=-lgd ./configure && make && make install && cd /usr/src && \
     curl -L "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -o nginx.tar.gz && \
     curl -L "https://github.com/soulteary/ngx_http_qrcode_module/archive/${NGX_LIBQR_VERSION}.tar.gz" -o ${NGX_LIBQR_VERSION}.tar.gz && \
     tar zxvf ${NGX_LIBQR_VERSION}.tar.gz && mv ngx_http_qrcode_module-${NGX_LIBQR_VERSION} ngx_http_qrcode_module && \
