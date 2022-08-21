@@ -1,9 +1,14 @@
-FROM soulteary/prebuilt-nginx-modules:ngx-1.21.1-qrcode-master-alpine AS Builder
+FROM soulteary/prebuilt-nginx-modules:ngx-1.23.1-qrcode-2022.08.21 AS Builder
 
-FROM nginx:1.21.0-alpine
+FROM nginx:1.23.1
 
-COPY --from=Builder /nginx                      /usr/sbin/nginx
-COPY --from=Builder /libqrencode.so.4.1.1       /usr/local/lib/libqrencode.so.4
-COPY --from=Builder /ngx_http_qrcode_module.so  /etc/nginx/modules/ngx_http_qrcode_module.so
+COPY --from=Builder /ngx_http_qrcode_module.so      /usr/local/nginx/modules/ngx_http_qrcode_module.so
+COPY --from=Builder /usr/local/lib/libqrencode.a    /usr/local/lib/libqrencode.a
+COPY --from=Builder /usr/local/bin/qrencode         /usr/local/bin/qrencode
+COPY --from=Builder /usr/local/nginx/sbin/nginx     /usr/sbin/nginx
 
-RUN curl -L https://github.com/nginx-with-docker/ngx_http_qrcode_module/raw/main/nginx.conf -o /etc/nginx/nginx.conf
+RUN mkdir -p /usr/local/nginx/ && \
+    mkdir -p /usr/local/nginx/conf/ && \
+    mkdir -p /usr/local/nginx/logs/ && \
+    mv /etc/nginx/* /usr/local/nginx/conf/
+RUN curl -L https://github.com/nginx-with-docker/ngx_http_qrcode_module/raw/main/nginx.conf -o /usr/local/nginx/conf/nginx.conf
