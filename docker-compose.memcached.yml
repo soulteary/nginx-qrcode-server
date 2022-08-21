@@ -3,7 +3,7 @@ version: "3.6"
 services:
 
   qrcode:
-    image: soulteary/nginx-qrcode-server
+    image: soulteary/nginx-qrcode-server:memcached
     volumes:
       - ./nginx.conf:/usr/local/nginx/conf/nginx.conf:ro
     ports:
