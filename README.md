@@ -73,3 +73,4 @@ Transfer/sec:      2.25MB
 - Docker Pre-built: https://github.com/soulteary/ngx_http_qrcode_module
 - QR-Encode Lib: https://github.com/fukuchi/libqrencode
 - Docker Nginx Dev Env: https://github.com/nginx-with-docker/nginx-docker-playground
+- SRCACHE Module: https://github.com/nginx-with-docker/ngx_http_srcache_filter_module
