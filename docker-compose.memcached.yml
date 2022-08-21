@@ -9,6 +9,8 @@ services:
     ports:
       - 8080:80
     restart: always
+    networks:
+      - qrcode-network
     environment:
       - TZ=Asia/Shanghai
     logging:
@@ -21,7 +23,12 @@ services:
     expose:
       - 11211
     restart: always
+    networks:
+      - qrcode-network
     logging:
         driver: "json-file"
         options:
             max-size: "10m"
+
+networks:
+  qrcode-network:

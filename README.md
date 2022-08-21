@@ -12,6 +12,15 @@ docker run --rm -it -p 8080:80 soulteary/nginx-qrcode-server
 
 open browser, visit `localhost:8080`
 
+## Docker Images
+
+Docker images that can be used:
+
+- soulteary/nginx-qrcode-server
+- soulteary/nginx-qrcode-server:memcached
+- soulteary/nginx-qrcode-server:2022.08.21
+- soulteary/nginx-qrcode-server:2022.08.21-memcached
+
 ## Docker Compose
 
 If you have `compose` locally, you can also use the `docker compose` or `docker-compose` command to quickly start the service:
