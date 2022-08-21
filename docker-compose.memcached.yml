@@ -5,7 +5,7 @@ services:
   qrcode:
     image: soulteary/nginx-qrcode-server:memcached
     volumes:
-      - ./nginx.conf:/usr/local/nginx/conf/nginx.conf:ro
+      - ./nginx.with-mc.conf:/usr/local/nginx/conf/nginx.conf:ro
     ports:
       - 8080:80
     restart: always

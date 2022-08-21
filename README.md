@@ -12,6 +12,23 @@ docker run --rm -it -p 8080:80 soulteary/nginx-qrcode-server
 
 open browser, visit `localhost:8080`
 
+## Docker Compose
+
+If you have `compose` locally, you can also use the `docker compose` or `docker-compose` command to quickly start the service:
+
+
+Simplify startup commands with compose:
+
+```bash
+docker compose up -d
+```
+
+Start the service with memcached for higher performance:
+
+```bash
+docker compose -f docker-compose.memcached.yml up -d
+```
+
 ## Benchmark
 
 Tested with a AMD Zen2 laptop (R7-4750u)
