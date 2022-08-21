@@ -1,0 +1,17 @@
+version: "3.6"
+
+services:
+
+  qrcode:
+    image: soulteary/nginx-qrcode-server
+    volumes:
+      - ./nginx.conf:/usr/local/nginx/conf/nginx.conf:ro
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
