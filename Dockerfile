@@ -11,4 +11,4 @@ RUN mkdir -p /usr/local/nginx/ && \
     mkdir -p /usr/local/nginx/conf/ && \
     mkdir -p /usr/local/nginx/logs/ && \
     mv /etc/nginx/* /usr/local/nginx/conf/
-RUN curl -L https://github.com/nginx-with-docker/ngx_http_qrcode_module/raw/main/nginx.conf -o /usr/local/nginx/conf/nginx.conf
+COPY nginx.conf /usr/local/nginx/conf/nginx.conf
