@@ -15,4 +15,4 @@ RUN mkdir -p /usr/local/nginx/ && \
     mkdir -p /usr/local/nginx/conf/ && \
     mkdir -p /usr/local/nginx/logs/ && \
     mv /etc/nginx/* /usr/local/nginx/conf/
-COPY nginx.with-mc.conf /usr/local/nginx/conf/nginx.conf
+COPY nginx/nginx.with-mc.conf /usr/local/nginx/conf/nginx.conf
