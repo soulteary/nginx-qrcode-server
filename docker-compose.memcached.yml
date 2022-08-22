@@ -11,6 +11,8 @@ services:
     restart: always
     networks:
       - qrcode-network
+    depends_on:
+      - memcached
     environment:
       - TZ=Asia/Shanghai
     logging:
