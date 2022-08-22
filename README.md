@@ -18,8 +18,8 @@ Docker images that can be used:
 
 - soulteary/nginx-qrcode-server
 - soulteary/nginx-qrcode-server:memcached
-- soulteary/nginx-qrcode-server:2022.08.21
-- soulteary/nginx-qrcode-server:2022.08.21-memcached
+- soulteary/nginx-qrcode-server:2022.08.22
+- soulteary/nginx-qrcode-server:2022.08.22-memcached
 
 ## Docker Compose
 
@@ -41,6 +41,8 @@ docker compose -f docker-compose.memcached.yml up -d
 ## Benchmark
 
 Tested with a AMD Zen2 laptop (R7-4750u)
+
+## Standalone
 
 single core: (limit nginx with `worker_processes 1`)
 
@@ -66,6 +68,21 @@ Running 30s test @ http://10.11.12.240:8080
   97811 requests in 30.10s, 67.81MB read
 Requests/sec:   3249.91
 Transfer/sec:      2.25MB
+```
+
+## With Memcached
+
+8 cores 16 threads: (limit nginx with `worker_processes auto`)
+
+```
+Running 30s test @ http://10.11.12.240:8080
+  16 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.78ms   20.19ms 324.35ms   98.46%
+    Req/Sec     4.02k   529.70     7.22k    82.11%
+  1903410 requests in 30.10s, 1.29GB read
+Requests/sec:  63237.09
+Transfer/sec:     43.84MB
 ```
 
 ## Resources
