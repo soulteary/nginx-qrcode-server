@@ -87,7 +87,13 @@ Transfer/sec:     43.84MB
 
 ## Resources
 
-- Docker Pre-built: https://github.com/soulteary/ngx_http_qrcode_module
-- QR-Encode Lib: https://github.com/fukuchi/libqrencode
-- Docker Nginx Dev Env: https://github.com/nginx-with-docker/nginx-docker-playground
-- SRCACHE Module: https://github.com/nginx-with-docker/ngx_http_srcache_filter_module
+- ngx_http_qrcode_module
+  - [Docker Pre-built & Nginx 1.23+](https://github.com/soulteary/ngx_http_qrcode_module)
+- libqrencode
+  - [A fast and compact QR Code encoding library](https://github.com/fukuchi/libqrencode)
+- nginx-docker-playground
+  - [Docker Nginx Dev Env](https://github.com/nginx-with-docker/nginx-docker-playground)
+- openresty/srcache-nginx-module
+  - [Docker Pre-built & Nginx 1.23+](https://github.com/nginx-with-docker/ngx_http_srcache_filter_module)
+- openresty/memc-nginx-module
+  - [Docker Pre-built & Nginx 1.23+](https://github.com/nginx-with-docker/ngx_http_memc_module)
